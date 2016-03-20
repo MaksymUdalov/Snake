@@ -19,9 +19,15 @@ namespace Snake
             snake.Draw();
 
 
+            //Создаём кушанье
+            Food foodWork = new Food(80, 25);
+            Point food = foodWork.CreateFood(snake);
+            food.Draw();
+
             //Старт
             while (true)
             {
+                
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();

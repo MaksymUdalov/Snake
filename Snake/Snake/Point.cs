@@ -9,6 +9,10 @@ namespace Snake
         int y;
         char sym;
 
+        public Point()
+        {
+
+        }
         public Point(int x, int y, char sym)
         {
             this.x = x;
@@ -16,11 +20,11 @@ namespace Snake
             this.sym = sym;
         }
 
-        public Point(Point startPosition)
+        public Point(Point point)
         {
-            x = startPosition.x;
-            y = startPosition.y;
-            sym = startPosition.sym;
+            x = point.x;
+            y = point.y;
+            sym = point.sym;
         }
 
         public void Draw()

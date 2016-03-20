@@ -23,6 +23,11 @@ namespace Snake
             }
         }
 
+        public List<Point> GetSnakeAsFigure()
+        {
+            return pList;
+        }
+
         public void Move()
         {
             Point tail = new Point(pList.First());
