@@ -9,6 +9,10 @@ namespace Snake
         int y;
         char sym;
 
+        public Point()
+        {
+
+        }
         public Point(int x, int y, char sym)
         {
             this.x = x;
@@ -16,10 +20,46 @@ namespace Snake
             this.sym = sym;
         }
 
+        public Point(Point point)
+        {
+            x = point.x;
+            y = point.y;
+            sym = point.sym;
+        }
+
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
+        }
+        public void Clear()
+        {
+            sym = ' ';
+            Draw();
+        }
+
+        public void FoodToSnake(Point food)
+        {
+            food.sym = '+';
+        }
+
+        public void Move(int offset, Direaction direction)
+        {
+            switch (direction)
+            {
+                case Direaction.LEFT:
+                    x -= offset;
+                    break;
+                case Direaction.RIGHT:
+                    x += offset;
+                    break;
+                case Direaction.UP:
+                    y -= offset;
+                    break;
+                case Direaction.DOWN:
+                    y += offset;
+                        break; 
+            }
         }
 
         public override bool Equals(object obj)
