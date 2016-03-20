@@ -38,6 +38,11 @@ namespace Snake
             Draw();
         }
 
+        public void FoodToSnake(Point food)
+        {
+            food.sym = '+';
+        }
+
         public void Move(int offset, Direaction direction)
         {
             switch (direction)

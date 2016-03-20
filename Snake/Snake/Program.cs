@@ -27,11 +27,19 @@ namespace Snake
             //Старт
             while (true)
             {
-                
+                if (walls.IsHit(snake) || snake.IsHitTail())
+                {
+                    break;
+                }
                 if (Console.KeyAvailable)
                 {
                     ConsoleKeyInfo key = Console.ReadKey();
                     snake.HandleKey(key.Key);
+                }
+                if (snake.Eat(food))
+                {
+                    food = foodWork.CreateFood(snake);
+                    food.Draw();
                 }
                 Thread.Sleep(100);
                 snake.Move();

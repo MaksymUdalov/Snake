@@ -39,6 +39,31 @@ namespace Snake
             head.Draw();
         }
 
+        public bool IsHitTail()
+        {
+            Point head = GoNextPoint();
+            for(int i = 0; i < pList.Count - 1; i++)
+            {
+                if (pList[i].Equals(head))
+                    return true;
+            }
+            return false;
+        }
+
+        public bool Eat(Point food)
+        {
+            Point head = pList.Last();
+            if (food.Equals(head))
+            {
+                food.FoodToSnake(food);
+
+                pList.Add(food);
+                Draw();
+                return true;
+            }
+            return false;
+        }
+
         public void HandleKey(ConsoleKey key)
         {
             switch (key)

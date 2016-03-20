@@ -32,5 +32,14 @@ namespace Snake
             Console.ForegroundColor = ConsoleColor.White;
         }
 
+        public bool IsHit(Figure figure)
+        {
+            foreach(var wall in walls)
+            {
+                if (wall.IsHit(figure))
+                    return true;
+            }
+            return false;
+        }
     }
 }

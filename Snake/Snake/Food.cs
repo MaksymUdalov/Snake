@@ -30,7 +30,7 @@ namespace Snake
                 foreach(Point point in snake.GetSnakeAsFigure())
                 {
                     if (point.Equals(food))
-                        valid = false;
+                        valid = true;
                 }
             }
             return food;
