@@ -17,7 +17,9 @@ namespace Snake
             Walls walls = new Walls(80, 25, '+');
             walls.Draw();
 
-
+            //Создаём змеючку
+            Snake snake = new Snake(new Point(2, 2, '+'), 5, Direaction.RIGHT);
+            snake.Draw();
 
             Console.ReadLine();
 

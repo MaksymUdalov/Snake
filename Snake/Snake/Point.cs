@@ -16,10 +16,36 @@ namespace Snake
             this.sym = sym;
         }
 
+        public Point(Point startPosition)
+        {
+            x = startPosition.x;
+            y = startPosition.y;
+            sym = startPosition.sym;
+        }
+
         public void Draw()
         {
             Console.SetCursorPosition(x, y);
             Console.Write(sym);
+        }
+
+        public void Move(int offset, Direaction direction)
+        {
+            switch (direction)
+            {
+                case Direaction.LEFT:
+                    x -= offset;
+                    break;
+                case Direaction.RIGHT:
+                    x += offset;
+                    break;
+                case Direaction.UP:
+                    y -= offset;
+                    break;
+                case Direaction.DOWN:
+                    y += offset;
+                        break; 
+            }
         }
 
         public override bool Equals(object obj)
